@@ -3,6 +3,7 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <h1> {{ $store.state.name}}</h1>
     <button @click="add">点击获取state</button>
+    <h1 >{{ $store.state.count}}</h1>
   </div>
 </template>
 
@@ -13,6 +14,8 @@ export default {
   methods: {
     add() {
       console.log(this.$store.state.name);
+      this.$store.commit('increment');  //调用mutatios中的方法
+
     }
   }
 }
